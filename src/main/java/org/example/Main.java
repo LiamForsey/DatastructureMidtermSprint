@@ -88,13 +88,13 @@ public class Main {
         }
     }
 
-    // method to find a user by username
+
     private static User findUser(User[] users, String username, int userCount) {
         for (int i = 0; i < userCount; i++) {
             if (users[i].getUsername().equalsIgnoreCase(username)) {
                 return users[i];
             }
         }
-        return null; // User not found
+        return null;
     }
 }
