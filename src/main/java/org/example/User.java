@@ -4,7 +4,6 @@ public class User {
     private String username;
     private TaskList taskList;
 
-
     public User(String username) {
         this.username = username;
         this.taskList = new TaskList();
@@ -27,7 +26,11 @@ public class User {
 
     // function to view all tasks in the user's to-do list
     public void seeAllTasks() {
-        System.out.println("Tasks for " + username + ":");
-        taskList.printTasks();
+        if (!taskList.hasTasks()) {
+            System.out.println("No tasks found for " + username + ".");
+        } else {
+            System.out.println("Tasks for " + username + ":");
+            taskList.printTasks();
+        }
     }
 }
